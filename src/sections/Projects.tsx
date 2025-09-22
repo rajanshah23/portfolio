@@ -1,6 +1,6 @@
 import { useInView } from "../hooks/useInView";
 import { ProjectType } from "../types";
-import { Github, ExternalLink } from "lucide-react";
+import {  Github,ExternalLink } from "lucide-react";
 import Home from "/screenshots/Home.png";
 import FeaturedShow from "/screenshots/FeaturedShow.png";
 import StayUpdated from "/screenshots/StayUpdated.png";
@@ -10,6 +10,9 @@ import BookTicket from "/screenshots/BookTicket.png";
 import paste1 from "/screenshots/paste1.png";
 import paste2 from "/screenshots/paste2.png";
 import Currency from "/screenshots/Currency.png";
+import mernstack from "/screenshots/mernstack.png"
+import mern1 from "/screenshots/mern1.png"
+import mern2 from "/screenshots/mern2.png"
 const projects: ProjectType[] = [
   {
     id: "project1",
@@ -46,6 +49,20 @@ const projects: ProjectType[] = [
   },
   {
     id: "project2",
+    title: "Online shopping center",
+    description:
+      "Online Shopping Center is a full-stack e-commerce web application developed using the MERN stack (MongoDB, Express.js, React, Node.js). The platform provides a seamless online shopping experience with features like product browsing, search and filter, cart management, order processing, and secure user authentication. .",
+    image:mernstack,
+    technologies: ["MERN"],
+    links: {
+      github: "https://github.com/rajanshah23/MERN-Stack",
+    },
+     screenshots: [
+       mernstack,mern1,mern2
+    ],
+  },
+  {
+    id: "project3",
     title: "PasteApp",
     description:
       "A simple yet powerful Paste App built with React, Redux, and LocalStorage that lets you effortlessly create, edit, copy, and manage your text snippets in one place! .",
