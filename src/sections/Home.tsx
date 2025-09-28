@@ -79,13 +79,13 @@ const Home = () => {
 
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <a
-                href="#contact"
+                href="contact"
                 className="px-6 py-2 sm:px-8 sm:py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all text-sm sm:text-base"
               >
                 Get in Touch
               </a>
               <a
-                href="#projects"
+                href="projects"
                 className="px-6 py-2 sm:px-8 sm:py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-all text-sm sm:text-base"
               >
                 View Projects
