@@ -63,7 +63,7 @@ const About = () => {
                   Who I Am
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  I'm an Electronics and Computer Engineer passionate about
+                  I'm an Electronics,Communication and Information Engineer passionate about
                   bridging the gap between hardware and software.
                 </p>
               </div>

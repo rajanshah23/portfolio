@@ -12,14 +12,14 @@ const certifications: CertificationType[] = [
     color: 'blue',
     link: 'https://www.hackerrank.com/certificates/iframe/3b9abec9b4f4',
   },
-  {
+   {
     id: 'Typescript',
-    title: 'Typescript',
+    title: 'Typescript Certificate',
     issuer: 'Digital Pathshala',
     issueDate: '2025-05-22',
     logo: 'https://imgs.search.brave.com/n1OO9whK_AT0eLAtByiStpy0ioE1JUic6Ndocs9OfmU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi80LzRjL1R5/cGVzY3JpcHRfbG9n/b18yMDIwLnN2Zy8y/NTBweC1UeXBlc2Ny/aXB0X2xvZ29fMjAy/MC5zdmcucG5n',
     color: 'blue',
-    link: 'certificate/Typescript-certificate.pdf',
+    link: '/certificate/TypeScript Certificate.pdf',  
   },
   {
     id: 'azure-cert',

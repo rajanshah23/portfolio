@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-white mb-4 mt-4">Rajan Kumar Gupta</h3>
             <p className="text-gray-400" style={{ textAlign: 'justify' }}>
-              Electronics and Computer Engineering student passionate about building smart systems through innovative code and hardware.
+              Electronics, Communication and Information Engineer passionate about building smart systems through innovative code and hardware.
             </p>
             <div className="flex space-x-4">
               <a href="http://github.com/rajanshah23" className="text-gray-400 hover:text-white transition-colors">

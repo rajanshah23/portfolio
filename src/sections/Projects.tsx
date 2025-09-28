@@ -9,10 +9,12 @@ import MyBooking from "/screenshots/MyBooking.png";
 import BookTicket from "/screenshots/BookTicket.png";
 import paste1 from "/screenshots/paste1.png";
 import paste2 from "/screenshots/paste2.png";
-import Currency from "/screenshots/Currency.png";
+// import Currency from "/screenshots/Currency.png";
 import mernstack from "/screenshots/mernstack.png"
 import mern1 from "/screenshots/mern1.png"
 import mern2 from "/screenshots/mern2.png"
+import { useState } from "react";
+
 const projects: ProjectType[] = [
   {
     id: "project1",
@@ -51,44 +53,44 @@ const projects: ProjectType[] = [
     id: "project2",
     title: "Online shopping center",
     description:
-      "Online Shopping Center is a full-stack e-commerce web application developed using the MERN stack (MongoDB, Express.js, React, Node.js). The platform provides a seamless online shopping experience with features like product browsing, search and filter, cart management, order processing, and secure user authentication. .",
-    image:mernstack,
+      "Online Shopping Center is a full-stack e-commerce web application developed using the MERN stack (MongoDB, Express.js, React, Node.js). The platform provides a seamless online shopping experience with features like product browsing, search and filter, cart management, order processing, and secure user authentication.",
+    image: mernstack,
     technologies: ["MERN"],
     links: {
       github: "https://github.com/rajanshah23/MERN-Stack",
     },
-     screenshots: [
-       mernstack,mern1,mern2
+    screenshots: [
+      mernstack, mern1, mern2
     ],
   },
   {
     id: "project3",
     title: "PasteApp",
     description:
-      "A simple yet powerful Paste App built with React, Redux, and LocalStorage that lets you effortlessly create, edit, copy, and manage your text snippets in one place! .",
-    image:  paste1,
+      "A simple yet powerful Paste App built with React, Redux, and LocalStorage that lets you effortlessly create, edit, copy, and manage your text snippets in one place!",
+    image: paste1,
     technologies: ["React", "Redux", "Localstorage"],
     links: {
       github: "https://github.com/rajanshah23/PasteApp",
     },
-     screenshots: [
-       paste1,paste2
+    screenshots: [
+      paste1, paste2
     ],
   },
-  {
-    id: "project3",
-    title: "Currency C0nverter",
-    description:
-      "A Currency Converter web application that allows users to convert amounts from one currency to another using real-time exchange rates. This project fetches up-to-date currency exchange rates from a reliable API and provides an easy-to-use interface for quick currency conversions. ",
-    image:  Currency,
-    technologies: ["Html", "CSS", "Javascript"],
-    links: {
-      github: "https://github.com/rajanshah23/Currency-Converter",
-    },
-     screenshots: [
-      Currency
-    ],
-  },
+  // {
+  //   id: "project4",
+  //   title: "Currency Converter",
+  //   description:
+  //     "A Currency Converter web application that allows users to convert amounts from one currency to another using real-time exchange rates. This project fetches up-to-date currency exchange rates from a reliable API and provides an easy-to-use interface for quick currency conversions.",
+  //   image: Currency,
+  //   technologies: ["Html", "CSS", "Javascript"],
+  //   links: {
+  //     github: "https://github.com/rajanshah23/Currency-Converter",
+  //   },
+  //   screenshots: [
+  //     Currency
+  //   ],
+  // },
 ];
 
 type ProjectsProps = {
@@ -97,6 +99,19 @@ type ProjectsProps = {
 
 const Projects = ({ onProjectSelect }: ProjectsProps) => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const [showAll, setShowAll] = useState(false);
+  
+  // Debug: Add console.log to check state changes
+  console.log("showAll state:", showAll);
+  console.log("projects.length:", projects.length);
+  
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+  console.log("visibleProjects length:", visibleProjects.length);
+
+  const handleToggle = () => {
+    console.log("Button clicked, current showAll:", showAll);
+    setShowAll(!showAll);
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-50" ref={ref}>
@@ -110,7 +125,7 @@ const Projects = ({ onProjectSelect }: ProjectsProps) => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div
               key={project.id}
               className={`bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 ${
@@ -150,6 +165,8 @@ const Projects = ({ onProjectSelect }: ProjectsProps) => {
                   {project.links.github && (
                     <a
                       href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-700 transition-colors flex items-center"
                     >
                       <Github className="w-4 h-4 mr-2" />
@@ -159,6 +176,8 @@ const Projects = ({ onProjectSelect }: ProjectsProps) => {
                   {project.links.live && (
                     <a
                       href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-green-600 hover:text-green-700 transition-colors flex items-center"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -168,6 +187,8 @@ const Projects = ({ onProjectSelect }: ProjectsProps) => {
                   {project.links.playStore && (
                     <a
                       href={project.links.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-green-600 hover:text-green-700 transition-colors flex items-center"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -179,6 +200,18 @@ const Projects = ({ onProjectSelect }: ProjectsProps) => {
             </div>
           ))}
         </div>
+        
+        {/* Show button if there are more projects than initially displayed */}
+        {projects.length > 3 && (
+          <div className="text-center mt-10">
+            <button
+              onClick={handleToggle}
+              className="px-6 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition-all duration-200"
+            >
+              {showAll ? "See Less" : "See More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

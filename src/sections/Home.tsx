@@ -50,7 +50,7 @@ const Home = () => {
       id="home"
       className="min-h-screen flex items-center py-16 lg:py-0 px-4 lg:px-8 mt-16 lg:mt-0 relative overflow-hidden"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
           {/* Introduction Text */}
           <div className="flex-1 text-center lg:text-left">
