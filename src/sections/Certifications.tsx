@@ -19,7 +19,7 @@ const certifications: CertificationType[] = [
     issueDate: "2025-05-22",
     logo: "https://imgs.search.brave.com/n1OO9whK_AT0eLAtByiStpy0ioE1JUic6Ndocs9OfmU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi80LzRjL1R5/cGVzY3JpcHRfbG9n/b18yMDIwLnN2Zy8y/NTBweC1UeXBlc2Ny/aXB0X2xvZ29fMjAy/MC5zdmcucG5n",
     color: "blue",
-    link: "/certificate/TypeScript Certificate.pdf",
+    link: "public/certificate/TypeScript Certificate.pdf",
   },
   {
     id: "azure-cert",
